@@ -41,7 +41,7 @@ numb_iters = 200000
 exp_name = 'exp_with_graph_global_new'
 target_set = 'D'
 phase='eval'
-checkpoint = '/home/datumx/data_science_experiments/housegan/model/exp_demo_D_500000.pth'
+checkpoint = '/content/drive/MyDrive/floor_plan_generation_colab/floor_plan_generation/housegan/model/exp_demo_D_500000.pth'
 # /{}_{}_{}.pth'.format(exp_name, target_set, numb_iters)
 os.makedirs("./dump/", exist_ok=True)
 os.makedirs("./output/", exist_ok=True)
@@ -178,7 +178,7 @@ generator.load_state_dict(torch.load(checkpoint))
 cuda = True if torch.cuda.is_available() else False
 if cuda:
     generator.cuda()
-rooms_path = '/home/datumx/data_science_experiments/housegan/dataset/'
+rooms_path = '/content/drive/MyDrive/floor_plan_generation_colab/floor_plan_generation/housegan/dataset/'
 
 # Initialize dataset iterator
 fp_dataset_test = FloorplanGraphDataset(rooms_path, transforms.Normalize(mean=[0.5], std=[0.5]), target_set=target_set, split=phase)
